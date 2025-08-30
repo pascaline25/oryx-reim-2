@@ -1,0 +1,8 @@
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/callback"
+  to = "/.netlify/functions/auth"
+  status = 200
+  force = true
