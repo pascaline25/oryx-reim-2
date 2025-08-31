@@ -1,17 +1,29 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-  
-  <!-- Ce script gère la connexion avec Netlify Identity -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
-  <!-- Ce script charge l'interface de Decap CMS -->
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js" defer></script>
-</head>
-<body>
-  <div id="nc-root"></div>
-</body>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Content Manager</title>
+
+    <!-- Netlify Identity widget (obligatoire pour l'invite par email) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    
+    <!-- Decap CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3/dist/decap-cms.js" defer></script>
+  </head>
+  <body>
+    <div id="nc-root"></div>
+    <script>
+      if (window.netlifyIdentity ) {
+        netlifyIdentity.on("init", user => {
+          if (!user) {
+            netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
