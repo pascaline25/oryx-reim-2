@@ -2,7 +2,7 @@ backend:
   name: github
   repo: pascaline25/oryx-reim-2 # ATTENTION: J'ai mis le nom de votre NOUVEAU dépôt ici
   branch: main
-  base_url: https://VOTRE-NOUVEAU-SITE.netlify.app # On mettra l'URL plus tard
+  base_url: https://reliable-sopapillas-a2b9c2.netlify.app
   auth_endpoint: callback
 
 media_folder: "static/uploads"
