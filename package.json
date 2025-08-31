@@ -1,7 +1,0 @@
-{
-  "name": "oryx-reim-cms-auth",
-  "version": "1.0.0",
-  "dependencies": {
-    "simple-oauth2": "^5.0.0"
-  }
-}
